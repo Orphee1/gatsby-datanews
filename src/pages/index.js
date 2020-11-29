@@ -1,5 +1,12 @@
 import React from "react"
+import { graphql } from "gatsby"
+import { Articles, Hero, Layout } from "../components"
 
 export default function Home() {
-  return <div>Hello world!</div>
+  return (
+    <Layout>
+      <Hero />
+      <Articles />
+    </Layout>
+  )
 }
