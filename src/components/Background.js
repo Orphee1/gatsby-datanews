@@ -17,7 +17,7 @@ const query = graphql`
 
 export default function Background({ children }) {
   const data = useStaticQuery(query)
-  console.log(data)
+  //   console.log(data)
   const {
     file: {
       childImageSharp: { fluid },

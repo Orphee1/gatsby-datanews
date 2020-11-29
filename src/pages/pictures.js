@@ -1,9 +1,10 @@
 import React from "react"
+import { Layout } from "../components"
 
-export default function picture() {
+export default function pictures() {
   return (
-    <div>
+    <Layout>
       <h1>Hello from Picture page</h1>
-    </div>
+    </Layout>
   )
 }

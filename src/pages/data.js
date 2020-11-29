@@ -1,9 +1,10 @@
 import React from "react"
+import { Layout } from "../components"
 
 export default function data() {
   return (
-    <div>
+    <Layout>
       <h1>Hello from Data page</h1>
-    </div>
+    </Layout>
   )
 }

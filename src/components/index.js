@@ -16,6 +16,7 @@ export {
   Hero,
   Layout,
   Navbar,
+  Pictures,
   Sidebar,
   Title,
 }
