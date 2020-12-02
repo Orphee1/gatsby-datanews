@@ -10,6 +10,7 @@ import Layout from "./Layout"
 import Navbar from "./Navbar"
 import Pictures from "./Pictures"
 import Sidebar from "./Sidebar"
+import Survey from "./Survey"
 import Title from "./Title"
 export {
   Airtable,
@@ -24,5 +25,6 @@ export {
   HomePictures,
   Pictures,
   Sidebar,
+  Survey,
   Title,
 }

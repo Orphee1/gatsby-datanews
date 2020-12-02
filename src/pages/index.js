@@ -41,11 +41,14 @@ export const query = graphql`
       }
       totalCount
     }
-    queryPics: allAirtable(filter: { table: { eq: "Pics" } }) {
+    queryPics: allAirtable(
+      filter: { table: { eq: "Pics" } }
+      sort: { order: ASC, fields: data___order }
+    ) {
       totalCount
       nodes {
-        id
         data {
+          location
           image {
             localFiles {
               childImageSharp {
@@ -55,7 +58,6 @@ export const query = graphql`
               }
             }
           }
-          location
         }
       }
     }

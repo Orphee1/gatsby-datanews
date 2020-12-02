@@ -20,7 +20,10 @@ export default function PicturesPage({ data }) {
 
 export const query = graphql`
   {
-    allAirtable(filter: { table: { eq: "Pics" } }) {
+    allAirtable(
+      filter: { table: { eq: "Pics" } }
+      sort: { order: ASC, fields: data___order }
+    ) {
       totalCount
       nodes {
         data {
@@ -33,7 +36,6 @@ export const query = graphql`
                 }
               }
             }
-            id
           }
         }
       }
