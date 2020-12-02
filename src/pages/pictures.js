@@ -24,7 +24,6 @@ export const query = graphql`
       totalCount
       nodes {
         data {
-          votes
           location
           image {
             localFiles {

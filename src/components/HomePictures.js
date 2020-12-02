@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import styled from "styled-components"
-import { Background, Title } from "./index"
+import { Background } from "./index"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 
 export default function HomePictures({ pictures, title }) {
@@ -15,7 +15,6 @@ export default function HomePictures({ pictures, title }) {
     const img = localFiles[0].childImageSharp.fluid
     return img
   })
-  //   console.log(images)
 
   const [index, setIndex] = useState(0)
 

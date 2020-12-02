@@ -1,6 +1,8 @@
+import Airtable from "./Airtable"
 import Articles from "./Articles"
 import Background from "./Background"
 import Banner from "./Banner"
+import Contact from "./Contact"
 import Footer from "./Footer"
 import Hero from "./Hero"
 import HomePictures from "./HomePictures"
@@ -10,9 +12,11 @@ import Pictures from "./Pictures"
 import Sidebar from "./Sidebar"
 import Title from "./Title"
 export {
+  Airtable,
   Articles,
   Background,
   Banner,
+  Contact,
   Footer,
   Hero,
   Layout,

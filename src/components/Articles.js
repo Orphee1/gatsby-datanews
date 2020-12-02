@@ -47,12 +47,10 @@ const Wrapper = styled.section`
     grid-gap: 2rem;
     .img {
       height: 20rem;
-      /* border-radius: var(--radius); */
       transition: var(--transition);
     }
     article {
       box-shadow: var(--light-shadow);
-      /* border-radius: var(--radius); */
       transition: var(--transition);
     }
     article:hover {
@@ -61,8 +59,6 @@ const Wrapper = styled.section`
     .container {
       position: relative;
       overflow: hidden;
-      /* border-radius: var(--radius); */
-      /* background: var(--clr-primary-7); */
       background: var(--clr-red-dark);
       &:hover .img {
         opacity: 0.3;

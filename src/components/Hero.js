@@ -1,7 +1,7 @@
 import React from "react"
 import { Background } from "./index"
 import styled from "styled-components"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import SocialLinks from "../constants/socialLinks"
 
 export default function Hero() {

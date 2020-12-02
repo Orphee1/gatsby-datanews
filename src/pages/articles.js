@@ -11,7 +11,7 @@ export default function ArticlesPage({ data }) {
   return (
     <Wrapper>
       <Layout>
-        <Articles articles={articles} title="Tous les articles" />
+        <Articles articles={articles} title="Tous les articles" page />
       </Layout>
     </Wrapper>
   )
