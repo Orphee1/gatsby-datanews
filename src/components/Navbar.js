@@ -2,27 +2,20 @@ import React from "react"
 import { GoThreeBars } from "react-icons/go"
 import styled from "styled-components"
 import PageLinks from "../constants/links"
-import { Link } from "gatsby"
 
-export default function NavBar() {
+export default function NavBar({ isOpen, toggleSidebar }) {
   return (
     <Wrapper className="">
       <div className="nav-center">
         <div className="nav-header">
           <h3>Data News</h3>
-          <button className="toggle-btn">
-            <GoThreeBars />
-          </button>
+          {!isOpen && (
+            <button className="toggle-btn" onClick={toggleSidebar}>
+              <GoThreeBars />
+            </button>
+          )}
         </div>
-        <ul className="nav-links">
-          {PageLinks.map(link => {
-            return (
-              <li key={link.id}>
-                <Link to={link.url}>{link.text}</Link>
-              </li>
-            )
-          })}
-        </ul>
+        <PageLinks styleClass="nav-links" />
       </div>
     </Wrapper>
   )
@@ -33,8 +26,7 @@ const Wrapper = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  /* position: relative; */
-  /* background: transparent; */
+  background: transparent;
   z-index: 1;
   height: 5rem;
   display: flex;
@@ -42,7 +34,6 @@ const Wrapper = styled.nav`
   .nav-center {
     width: 90vw;
     margin: 0 auto;
-    /* max-width: var(--max-width); */
     max-width: 1170px;
   }
   .nav-header {
@@ -62,11 +53,12 @@ const Wrapper = styled.nav`
       border-radius: 1.5rem;
       border: transparent;
       color: var(--clr-white);
-      background: var(--clr-primary-5);
+      background: var(--clr-primary-3);
+
       cursor: pointer;
       transition: var(--transition);
       &:hover {
-        background: var(--clr-primary-3);
+        background: var(--clr-red-dark);
       }
     }
   }
@@ -88,7 +80,6 @@ const Wrapper = styled.nav`
     }
     .nav-links a {
       text-transform: capitalize;
-      /* color: var(--clr-grey-1); */
       color: white;
       font-weight: bold;
       letter-spacing: var(--spacing);
@@ -97,9 +88,7 @@ const Wrapper = styled.nav`
     }
 
     .nav-links a:hover {
-      /* color: var(--clr-primary-5); */
-      color: #f3d279;
-      /* box-shadow: 0px 2px var(--clr-primary-5); */
+      color: var(--clr-red-dark);
       box-shadow: 0px 2px #f3d279;
     }
 

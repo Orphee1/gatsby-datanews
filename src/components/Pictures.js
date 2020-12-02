@@ -1,8 +1,130 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
-import Title from "./Title"
+import Image from "gatsby-image"
+import { AiFillLike } from "react-icons/ai"
 
-export default function Pictures({ title }) {
-  return <div></div>
+export default function Pictures({ pictures }) {
+  console.log(pictures)
+  return (
+    <Wrapper className="section">
+      <div className="tile-layout">
+        {pictures.map((item, index) => {
+          const {
+            data: {
+              image: { localFiles, id },
+              location,
+              votes,
+            },
+          } = item
+          const fluid = localFiles[0].childImageSharp.fluid
+          return (
+            <article key={id} className={`div-${index}`}>
+              <Image className="img" fluid={fluid} />
+              <div className="info">
+                <AiFillLike
+                  fontSize="2rem"
+                  style={{ marginBottom: "1.5rem" }}
+                />
+                <p>{votes} j'aime</p>
+                <p>{location}</p>
+              </div>
+            </article>
+          )
+        })}
+      </div>
+    </Wrapper>
+  )
 }
+
+const Wrapper = styled.section`
+  background: var(--clr-grey-0);
+  .tile-layout {
+    margin-top: 2rem;
+    display: grid;
+    width: 90vw;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    gap: 1rem;
+    /* safari workaround */
+    grid-gap: 1rem;
+    grid-template-rows: 300px 300px;
+    grid-auto-rows: 300px;
+  }
+  .img {
+    height: 100%;
+    /* border-radius: var(--radius); */
+    /* transition: var(--transition); */
+  }
+  article {
+    position: relative;
+    &:hover .img {
+      opacity: 0.4;
+    }
+    .info {
+      position: absolute;
+      top: 40%;
+      left: 0;
+      /* transform: translate(-50%, -50%); */
+      width: 100%;
+      opacity: 0;
+      transition: var(--transition);
+      color: white;
+      text-align: center;
+      p {
+        color: white;
+      }
+    }
+    &:hover .info {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .tile-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 992px) {
+    .tile-layout {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 250px 250px;
+      grid-auto-rows: 250px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .tile-layout {
+      display: grid;
+      grid-template-areas:
+        "a b b"
+        "c b b"
+        "d d e"
+        "d d f"
+        "g h h";
+
+      .div-0 {
+        grid-area: a;
+      }
+      .div-1 {
+        grid-area: b;
+      }
+      .div-2 {
+        grid-area: c;
+      }
+      .div-3 {
+        grid-area: d;
+      }
+      .div-4 {
+        grid-area: e;
+      }
+      .div-5 {
+        grid-area: f;
+      }
+      .div-6 {
+        grid-area: g;
+      }
+      .div-7 {
+        grid-area: h;
+      }
+    }
+  }
+`

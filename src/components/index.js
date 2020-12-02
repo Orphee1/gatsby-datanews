@@ -3,6 +3,7 @@ import Background from "./Background"
 import Banner from "./Banner"
 import Footer from "./Footer"
 import Hero from "./Hero"
+import HomePictures from "./HomePictures"
 import Layout from "./Layout"
 import Navbar from "./Navbar"
 import Pictures from "./Pictures"
@@ -16,6 +17,7 @@ export {
   Hero,
   Layout,
   Navbar,
+  HomePictures,
   Pictures,
   Sidebar,
   Title,

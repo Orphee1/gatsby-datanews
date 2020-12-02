@@ -28,7 +28,7 @@ export default function Articles({ articles, page, title }) {
         })}
       </div>
       {!page && (
-        <Link to="/articles" className="btn">
+        <Link to="/articles" className="btn center-btn">
           Articles
         </Link>
       )}
@@ -37,7 +37,7 @@ export default function Articles({ articles, page, title }) {
 }
 
 const Wrapper = styled.section`
-  background: var(--clr-grey-10);
+  background: white;
   .section-center {
     margin-top: 4rem;
     max-width: var(--max-width);
@@ -47,12 +47,12 @@ const Wrapper = styled.section`
     grid-gap: 2rem;
     .img {
       height: 20rem;
-      border-radius: var(--radius);
+      /* border-radius: var(--radius); */
       transition: var(--transition);
     }
     article {
       box-shadow: var(--light-shadow);
-      border-radius: var(--radius);
+      /* border-radius: var(--radius); */
       transition: var(--transition);
     }
     article:hover {
@@ -61,10 +61,11 @@ const Wrapper = styled.section`
     .container {
       position: relative;
       overflow: hidden;
-      border-radius: var(--radius);
-      background: var(--clr-primary-7);
+      /* border-radius: var(--radius); */
+      /* background: var(--clr-primary-7); */
+      background: var(--clr-red-dark);
       &:hover .img {
-        opacity: 0.2;
+        opacity: 0.3;
       }
       .info {
         position: absolute;

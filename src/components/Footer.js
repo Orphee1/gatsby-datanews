@@ -31,7 +31,7 @@ const Wrapper = styled.footer`
     }
     span {
       /* color: var(--clr-primary-5); */
-      color: #2caeba;
+      color: var(--clr-red-dark);
     }
   }
   .footer-links {
@@ -52,7 +52,8 @@ const Wrapper = styled.footer`
       transition: var(--transition);
     }
     .social-link:hover {
-      color: var(--clr-primary-5);
+      /* color: var(--clr-primary-5); */
+      color: var(--clr-red-dark);
     }
   }
 `

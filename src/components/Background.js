@@ -15,7 +15,7 @@ const query = graphql`
   }
 `
 
-export default function Background({ children }) {
+export default function Background({ children, image }) {
   const data = useStaticQuery(query)
   //   console.log(data)
   const {
@@ -27,7 +27,8 @@ export default function Background({ children }) {
     <Wrapper>
       <BackgroundImage
         Tag="div"
-        fluid={fluid}
+        fluid={image || fluid}
+        // fluid={fluid}
         preserveStackingContext={true}
         className="bcg"
       >

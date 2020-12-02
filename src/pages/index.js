@@ -1,10 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Articles, Hero, Layout } from "../components"
+import { Articles, Hero, HomePictures, Layout } from "../components"
 
 export default function Home({ data }) {
+  //   console.log(data)
   const {
     allAirtable: { nodes: articles },
+    queryPics: { nodes: pictures },
   } = data
   //   console.log(articles)
 
@@ -12,12 +14,13 @@ export default function Home({ data }) {
     <Layout>
       <Hero />
       <Articles articles={articles} title="Derniers articles" />
+      <HomePictures pictures={pictures} />
     </Layout>
   )
 }
 export const query = graphql`
   {
-    allAirtable(filter: { table: { eq: "Articles" } }, limit: 3) {
+    allAirtable(filter: { table: { eq: "Articles" } }, limit: 2) {
       nodes {
         id
         data {
@@ -37,6 +40,24 @@ export const query = graphql`
         }
       }
       totalCount
+    }
+    queryPics: allAirtable(filter: { table: { eq: "Pics" } }) {
+      totalCount
+      nodes {
+        id
+        data {
+          image {
+            localFiles {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          location
+        }
+      }
     }
   }
 `

@@ -1,11 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import "../css/main.css"
-import { Footer, Navbar } from "./index"
+import { Footer, Navbar, Sidebar } from "./index"
 
-export default function layout({ children }) {
+export default function Layout({ children }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen)
+  }
   return (
     <>
-      <Navbar />
+      <Navbar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       {children}
       <Footer />
     </>

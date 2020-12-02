@@ -20,9 +20,16 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     font-weight: 500;
+    /* color: white; */
+    /* color: var(--clr-grey-0); */
+    color: black;
     span {
       font-size: 0.85em;
-      color: var(--clr-primary-5);
+      /* color: var(--clr-primary-5); */
+      /* color: white; */
+      /* color: var(--clr-grey-0); */
+      color: black;
+
       margin-right: 1rem;
       font-weight: 700;
     }
