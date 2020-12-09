@@ -1,9 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import { Contact, Layout } from "../components"
+import { Contact, Layout, SEO } from "../components"
 export default function ContactPage() {
   return (
     <Wrapper>
+      <SEO title="Contact"/>
       <Layout>
         <Contact />
       </Layout>

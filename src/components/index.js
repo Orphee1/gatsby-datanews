@@ -9,6 +9,7 @@ import HomePictures from "./HomePictures"
 import Layout from "./Layout"
 import Navbar from "./Navbar"
 import Pictures from "./Pictures"
+import SEO from "./seo"
 import Sidebar from "./Sidebar"
 import Survey from "./Survey"
 import Title from "./Title"
@@ -24,6 +25,7 @@ export {
   Navbar,
   HomePictures,
   Pictures,
+  SEO,
   Sidebar,
   Survey,
   Title,

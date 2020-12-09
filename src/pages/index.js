@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Articles, Hero, HomePictures, Layout } from "../components"
+import { Articles, Hero, HomePictures, Layout, SEO } from "../components"
 
 export default function Home({ data }) {
   //   console.log(data)
@@ -12,6 +12,7 @@ export default function Home({ data }) {
 
   return (
     <Layout>
+      <SEO title="Home"/>
       <Hero />
       <Articles articles={articles} title="Derniers articles" />
       <HomePictures pictures={pictures} />

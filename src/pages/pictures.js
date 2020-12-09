@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Layout, Pictures } from "../components"
+import { Layout, Pictures, SEO } from "../components"
 import { graphql } from "gatsby"
 
 export default function PicturesPage({ data }) {
@@ -11,6 +11,7 @@ export default function PicturesPage({ data }) {
 
   return (
     <Wrapper>
+      <SEO title="Pictures" />
       <Layout>
         <Pictures pictures={pictures} />
       </Layout>

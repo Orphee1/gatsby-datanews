@@ -9,9 +9,9 @@ import { BsPencilSquare } from "react-icons/bs"
 export default function Survey() {
   const [items, setItems] = useState([])
   const [isLoading, setIsLoading] = useState(true)
-  const [openForm, setOpenForm] = useState(true)
-  console.log(openForm)
-  //   !isLoading && console.log(items)
+  const [comment, setComment] = useState("")
+
+  // !isLoading && console.log(items)
 
   const getRecords = async () => {
     const records = await base("LikePics")
@@ -20,13 +20,13 @@ export default function Survey() {
       })
       .firstPage()
       .catch(error => console.log(error))
-    console.log(records)
+    //     console.log(records)
     const newItems = records.map(record => {
       const { id, fields } = record
       return {
         id,
         fields,
-        // Add formOpen: false?? et le on click le fait passer à true??
+        isOpen: false,
       }
     })
     setItems(newItems)
@@ -62,6 +62,24 @@ export default function Survey() {
     setIsLoading(false)
   }
 
+  const toggleForm = id => {
+    const openItems = [...items].map(item => {
+      if (item.id === id) {
+        item = { ...item, isOpen: !item.isOpen }
+        return item
+      } else {
+        return item
+      }
+    })
+    setItems(openItems)
+  }
+
+  const handleSubmit = async (id, cb) => {
+    console.log(comment)
+
+    cb(id)
+  }
+
   return (
     <Wrapper>
       <div className="container">
@@ -74,10 +92,11 @@ export default function Survey() {
               //       console.log(item)
               const {
                 id,
+                isOpen,
                 fields: { name, votes },
               } = item
               return (
-                <li key={id}>
+                <li key={index}>
                   <div className="key">{name}</div>
                   <div
                     style={{
@@ -98,11 +117,12 @@ export default function Survey() {
                       fontSize="2rem"
                       style={{ cursor: "pointer" }}
                       onClick={() => {
-                        setOpenForm(true)
+                        // toggleForm(index)
+                        toggleForm(id)
                       }}
                     />
                   </div>
-                  {openForm && (
+                  {isOpen && (
                     <article className="contact-form">
                       <form>
                         <div className="form-group">
@@ -112,11 +132,20 @@ export default function Survey() {
                             rows="3"
                             placeholder="écrivez un commentaire"
                             className="form-control"
+                            value={comment}
+                            onChange={event => {
+                              setComment(event.target.value)
+                            }}
                           ></textarea>
+                          <button
+                            className="btn submit-btn"
+                            onClick={() => {
+                              handleSubmit(id, toggleForm)
+                            }}
+                          >
+                            Envoyer
+                          </button>
                         </div>
-                        {/* <button type="submit" className="btn submit-btn ">
-                          Envoyer
-                        </button> */}
                       </form>
                     </article>
                   )}
@@ -179,24 +208,15 @@ const Wrapper = styled.section`
         color: var(--clr-grey-5);
         letter-spacing: var(--spacing);
       }
-      h4 {
+      /* h4 {
         margin-bottom: 0;
-      }
-      button {
-        background: transparent;
-        border-color: transparent;
-        font-size: 2rem;
-        cursor: pointer;
-        color: var(--clr-black);
-      }
+      } */
     }
     .contact-form {
       position: absolute;
-      /* top: 0; */
       top: -10%;
-      /* left: 0; */
       left: 40%;
-
+      z-index: 999;
       background: var(--clr-white);
       border-radius: var(--radius);
       text-align: center;
@@ -206,7 +226,7 @@ const Wrapper = styled.section`
       max-width: 35rem;
     }
     .contact-form:hover {
-      /* box-shadow: var(--dark-shadow); */
+      box-shadow: var(--dark-shadow);
     }
     .form-group {
       padding: 1rem 1.5rem;

@@ -1,10 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { Layout } from "../components"
+import { Layout, SEO } from "../components"
 
 export default function DataPage() {
   return (
     <Wrapper>
+      <SEO title="Data" />
       <Layout>
         <h1>Hello from Data page</h1>
       </Layout>

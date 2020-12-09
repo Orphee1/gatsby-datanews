@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import { Articles, Layout } from "../components"
+import { Articles, Layout, SEO } from "../components"
 
 export default function ArticlesPage({ data }) {
   const {
@@ -10,6 +10,7 @@ export default function ArticlesPage({ data }) {
 
   return (
     <Wrapper>
+<SEO title="Articles"/>
       <Layout>
         <Articles articles={articles} title="Tous les articles" page />
       </Layout>

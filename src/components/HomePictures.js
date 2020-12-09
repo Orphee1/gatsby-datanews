@@ -19,7 +19,6 @@ export default function HomePictures({ pictures, title }) {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
-    console.log("render HeroPictures component")
     const lastIndex = images.length - 1
 
     if (index < 0) {

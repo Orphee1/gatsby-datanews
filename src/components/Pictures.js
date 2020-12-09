@@ -18,7 +18,7 @@ export default function Pictures({ pictures }) {
           } = item
           const fluid = localFiles[0].childImageSharp.fluid
           return (
-            <article key={id} className={`div-${index}`}>
+            <article key={index} className={`div-${index}`}>
               <Image className="img" fluid={fluid} />
               <span>{index + 1}</span>
               <div className="info">
