@@ -2,6 +2,7 @@ import Airtable from "./Airtable"
 import Articles from "./Articles"
 import Background from "./Background"
 import Banner from "./Banner"
+import Categories from "./Categories"
 import Contact from "./Contact"
 import Footer from "./Footer"
 import Hero from "./Hero"
@@ -18,6 +19,7 @@ export {
   Articles,
   Background,
   Banner,
+  Categories,
   Contact,
   Footer,
   Hero,

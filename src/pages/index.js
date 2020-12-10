@@ -21,11 +21,12 @@ export default function Home({ data }) {
 }
 export const query = graphql`
   {
-    allAirtable(filter: { table: { eq: "Articles" } }, limit: 2) {
+    allAirtable(filter: { table: { eq: "Articles" } }, limit: 2, sort: {fields: data___date, order: DESC}) {
       nodes {
         id
         data {
           category
+           date(formatString: "MM YYYY")
           link
           sum
           title

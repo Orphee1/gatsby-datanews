@@ -14,8 +14,7 @@ export default function ContactPage() {
 
 const Wrapper = styled.main`
   min-height: 100vh;
-  background: var(--clr-grey-10);
-
+    background: var(--clr-grey-10);
   nav {
     background: #222;
   }

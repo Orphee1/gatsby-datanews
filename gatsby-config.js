@@ -11,7 +11,7 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `HL Data News`,
-    description: `HL data news website. Built with Gatsby, using Airtable`,
+    description: `Hugo Lattard data news website. Built with Gatsby, using Airtable`,
     author: `Hugo Lattard`,
     titleTemplate: `%s | HL Data News`,
     url: `https://hugo-lattard-journaliste.netlify.app/`,
