@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import "../css/main.css"
 import { Footer, Navbar, Sidebar } from "./index"
 
 export default function Layout({ children }) {

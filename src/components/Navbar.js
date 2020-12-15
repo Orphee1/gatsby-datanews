@@ -5,7 +5,7 @@ import PageLinks from "../constants/links"
 
 export default function NavBar({ isOpen, toggleSidebar }) {
   return (
-    <Wrapper className="">
+    <Wrapper>
       <div className="nav-center">
         <div className="nav-header">
           <h3>Data News</h3>
@@ -22,11 +22,8 @@ export default function NavBar({ isOpen, toggleSidebar }) {
 }
 
 const Wrapper = styled.nav`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: transparent;
+  position: relative;
+background: transparent;
   z-index: 1;
   height: 5rem;
   display: flex;
@@ -85,6 +82,7 @@ const Wrapper = styled.nav`
       letter-spacing: var(--spacing);
       transition: var(--transition);
       padding: 0.5rem 0;
+     
     }
 
     .nav-links a:hover {

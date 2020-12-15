@@ -27,9 +27,7 @@ export const Wrapper = styled.section`
     align-items: center;
     .hero-info {
       background: transparent;
-      .hero-links a {
-        margin: 0 0.5rem;
-      }
+   
     }
 
     h1,
