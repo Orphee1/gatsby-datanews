@@ -201,5 +201,7 @@ p {
 `
 
 export const wrapRootElement = ({ element }) => {
-  return <>{element} </>
+  return <>
+  <GlobalStyle />
+  {element} </>
 }

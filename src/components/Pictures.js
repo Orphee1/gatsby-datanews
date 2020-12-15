@@ -12,7 +12,7 @@ export default function Pictures({ pictures }) {
         {pictures.map((item, index) => {
           const {
             data: {
-              image: { localFiles, id },
+              image: { localFiles },
               location,
             },
           } = item
