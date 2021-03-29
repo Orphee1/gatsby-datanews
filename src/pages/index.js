@@ -5,7 +5,7 @@ import { Articles, Hero, HomePictures, Layout, SEO } from "../components"
 export default function Home({ data }) {
   //   console.log(data)
   const {
-    allAirtable: { nodes: articles },
+    queryArticles: { nodes: articles },
     queryPics: { nodes: pictures },
   } = data
   //   console.log(articles)
@@ -21,7 +21,7 @@ export default function Home({ data }) {
 }
 export const query = graphql`
   {
-    allAirtable(
+    queryArticles: allAirtable(
       filter: { table: { eq: "Articles" } }
       limit: 2
       sort: { fields: data___date, order: DESC }
