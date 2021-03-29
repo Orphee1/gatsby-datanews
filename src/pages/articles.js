@@ -5,7 +5,8 @@ import { Articles, Layout, SEO } from "../components"
 
 export default function ArticlesPage({ data }) {
   const {
-    allAirtable: { nodes: articles },
+    // allAirtable: { nodes: articles },
+    queryArticles: { nodes: articles },
   } = data
 
   return (
@@ -20,7 +21,7 @@ export default function ArticlesPage({ data }) {
 
 export const query = graphql`
   {
-    allAirtable(
+    queryArticles: allAirtable(
       filter: { table: { eq: "Articles" } }
       sort: { fields: data___date, order: DESC }
     ) {

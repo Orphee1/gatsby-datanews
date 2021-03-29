@@ -6,7 +6,8 @@ import { graphql } from "gatsby"
 export default function PicturesPage({ data }) {
   //   console.log(data)
   const {
-    allAirtable: { nodes: pictures },
+    // allAirtable: { nodes: pictures },
+    queryPics: { nodes: pictures },
   } = data
 
   return (
@@ -21,7 +22,7 @@ export default function PicturesPage({ data }) {
 
 export const query = graphql`
   {
-    allAirtable(
+    queryPics: allAirtable(
       filter: { table: { eq: "Pics" } }
       sort: { order: ASC, fields: data___order }
     ) {
