@@ -14,8 +14,8 @@ export default function Home({ data }) {
     <Layout>
       <SEO title="Home" />
       <Hero />
-      {/* <Articles articles={articles} title="Derniers articles" /> */}
-      {/* <HomePictures pictures={pictures} /> */}
+      {/* <Articles articles={articles} title="Derniers articles" />
+      <HomePictures pictures={pictures} /> */}
     </Layout>
   )
 }

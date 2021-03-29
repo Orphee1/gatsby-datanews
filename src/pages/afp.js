@@ -6,7 +6,8 @@ import { Afp, Layout, SEO } from "../components"
 export default function AfpPage({ data }) {
   // console.log(data)
   const {
-    allAirtable: { nodes: dispatches },
+    // allAirtable: { nodes: dispatches },
+    queryAFP: { nodes: dispatches },
   } = data
 
   return (
@@ -21,7 +22,7 @@ export default function AfpPage({ data }) {
 
 export const query = graphql`
   {
-    allAirtable(
+    queryAFP: allAirtable(
       filter: { table: { eq: "Afp" } }
       sort: { fields: data___date, order: DESC }
     ) {
