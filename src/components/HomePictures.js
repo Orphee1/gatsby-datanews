@@ -62,19 +62,21 @@ export default function HomePictures({ pictures, title }) {
 
 const Wrapper = styled.section`
   height: 100%;
-  .article {
+  article {
     width: 85vw;
     max-width: 800px;
-    color: white;
-    text-align: center;
-  }
-  h1 {
-    /* text-transform: uppercase; */
-    font-weight: 500;
-    line-height: 1.25;
-    margin: 2rem 0 3rem 0;
-    letter-spacing: 3px;
-    color: white;
+    display: grid;
+    justify-content: center;
+    h1 {
+      font-weight: 500;
+      line-height: 1.25;
+      margin: 2rem 0 3rem 0;
+      letter-spacing: 3px;
+      color: white;
+    }
+    a {
+      justify-self: center;
+    }
   }
   .next-btn,
   .prev-btn {
@@ -83,8 +85,7 @@ const Wrapper = styled.section`
     transform: translateY(-50%);
     font-size: 2.5rem;
     background: transparent;
-    /* color: var(--clr-white); */
-    color: white;
+    color: var(--clr-white);
     border: transparent;
     cursor: pointer;
     outline: none;
@@ -97,7 +98,6 @@ const Wrapper = styled.section`
   }
   .next-btn:hover,
   .prev-btn:hover {
-    /* color: var(--clr-primary-5); */
     color: var(--clr-red-dark);
   }
   .prev-btn {

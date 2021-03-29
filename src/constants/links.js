@@ -14,21 +14,26 @@ const data = [
   },
   {
     id: 3,
+    text: "AFP",
+    url: "/afp/",
+  },
+  {
+    id: 4,
     text: "data",
     url: "/data/",
   },
   {
-    id: 4,
+    id: 5,
     text: "photos",
     url: "/pictures/",
   },
+  // {
+  //   id: 6,
+  //   text: "about",
+  //   url: "/about/",
+  // },
   {
-    id: 5,
-    text: "about",
-    url: "/about/",
-  },
-  {
-    id: 6,
+    id: 7,
     text: "contact",
     url: "/contact/",
   },

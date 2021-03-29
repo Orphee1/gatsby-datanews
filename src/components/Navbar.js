@@ -23,7 +23,7 @@ export default function NavBar({ isOpen, toggleSidebar }) {
 
 const Wrapper = styled.nav`
   position: relative;
-background: transparent;
+  background: transparent;
   z-index: 1;
   height: 5rem;
   display: flex;
@@ -62,7 +62,7 @@ background: transparent;
   .nav-links {
     display: none;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 50em) {
     .nav-header {
       .toggle-btn {
         display: none;
@@ -75,19 +75,38 @@ background: transparent;
     .nav-links li {
       margin-right: 2rem;
     }
+
     .nav-links a {
       text-transform: capitalize;
-      color: white;
+      color: var(--clr-white);
       font-weight: bold;
+      font-size: 1rem;
       letter-spacing: var(--spacing);
-      transition: var(--transition);
+      transition: color 0.5s;
       padding: 0.5rem 0;
-     
+      position: relative;
+    }
+
+    .nav-links a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 3px;
+      background-color: #fff;
+      transform: scaleY(0);
+      z-index: -1;
+      transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+        background-color 0.1s;
     }
 
     .nav-links a:hover {
       color: var(--clr-red-dark);
-      box-shadow: 0px 2px #f3d279;
+    }
+    .nav-links a:hover::before {
+      transform: scaleY(1);
+      width: 100%;
     }
 
     .nav-center {

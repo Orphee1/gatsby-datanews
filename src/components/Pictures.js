@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import Image from "gatsby-image"
-import { Survey } from "./index"
 
 export default function Pictures({ pictures }) {
   //   console.log(pictures)
@@ -28,7 +27,6 @@ export default function Pictures({ pictures }) {
           )
         })}
       </div>
-      <Survey />
     </Wrapper>
   )
 }

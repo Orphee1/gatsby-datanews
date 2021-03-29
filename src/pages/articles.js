@@ -10,9 +10,9 @@ export default function ArticlesPage({ data }) {
 
   return (
     <Wrapper>
-<SEO title="Articles"/>
+      <SEO title="Articles" />
       <Layout>
-        <Articles articles={articles} title="Articles" page menuCategory/>
+        <Articles articles={articles} title="Articles" page menuCategory />
       </Layout>
     </Wrapper>
   )
@@ -20,7 +20,10 @@ export default function ArticlesPage({ data }) {
 
 export const query = graphql`
   {
-    allAirtable(filter: { table: { eq: "Articles" } }, sort: {fields: data___date, order: DESC}) {
+    allAirtable(
+      filter: { table: { eq: "Articles" } }
+      sort: { fields: data___date, order: DESC }
+    ) {
       nodes {
         id
         data {

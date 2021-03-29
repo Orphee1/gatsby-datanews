@@ -1,3 +1,4 @@
+import Afp from "./Afp"
 import Airtable from "./Airtable"
 import Articles from "./Articles"
 import Background from "./Background"
@@ -15,6 +16,7 @@ import Sidebar from "./Sidebar"
 import Survey from "./Survey"
 import Title from "./Title"
 export {
+  Afp,
   Airtable,
   Articles,
   Background,

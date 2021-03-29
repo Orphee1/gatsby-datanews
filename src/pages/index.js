@@ -12,7 +12,7 @@ export default function Home({ data }) {
 
   return (
     <Layout>
-      <SEO title="Home"/>
+      <SEO title="Home" />
       <Hero />
       <Articles articles={articles} title="Derniers articles" />
       <HomePictures pictures={pictures} />
@@ -21,12 +21,16 @@ export default function Home({ data }) {
 }
 export const query = graphql`
   {
-    allAirtable(filter: { table: { eq: "Articles" } }, limit: 2, sort: {fields: data___date, order: DESC}) {
+    allAirtable(
+      filter: { table: { eq: "Articles" } }
+      limit: 2
+      sort: { fields: data___date, order: DESC }
+    ) {
       nodes {
         id
         data {
           category
-           date(formatString: "MM YYYY")
+          date(formatString: "MM YYYY")
           link
           sum
           title

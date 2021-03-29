@@ -31,6 +31,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Roboto", "Open Sans"],
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-airtable`,
       options: {
         apiKey: process.env.GATSBY_AIRTABLE_API,
@@ -45,6 +53,10 @@ module.exports = {
             baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
             tableName: `Pics`,
             mapping: { image: `fileNode` },
+          },
+          {
+            baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
+            tableName: `Afp`,
           },
         ],
       },
